@@ -1,38 +1,23 @@
 import React from 'react';
 import {
-	TouchableOpacity,
-	Text,
-	StyleSheet,
-	ViewStyle,
-	TextStyle,
 	AppRegistry,
+	StyleSheet,
+	Text,
+	TextStyle,
+	TouchableOpacity,
+	ViewStyle,
 } from 'react-native';
 
 import Point from './point';
 
-interface Props {
-
-}
-
-interface State {
-
-}
-
-export default class App extends React.Component<Props, State> {
-	onPress() {
-		alert('press demo 1  ss dd');
+export default class App extends React.Component<{}, {}> {
+	private onPress() {
+		alert('press demo 1 d ss dd');
 	}
 
-	withoutTest() {
-		let a = 1;
-		let b = 2;
-		let c = 3;
-		return c + a > b ? a : b;
-	}
-
-	render() {
-		let p1: Point = new Point(3, 5);
-		let p2: Point = new Point(5, 5);
+	public render() {
+		const p1: Point = new Point(3, 5);
+		const p2: Point = new Point(5, 5);
 		return (
 			<TouchableOpacity style={styles.container} onPress={this.onPress.bind(this)}>
 				<Text style={styles.welcome}>
@@ -52,10 +37,10 @@ export default class App extends React.Component<Props, State> {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: '#F5FCFF',
+		flex: 1,
+		justifyContent: 'center',
 	} as ViewStyle,
 
 	welcome: {

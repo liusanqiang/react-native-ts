@@ -10,6 +10,7 @@
     "build": "tsc",
     "pretest": "npm run build",
     "test": "jest",
+		"lint":  "tslint --project ./tsconfig.json --config ./tslint.json --type-check ./src/**/*.ts?",
     "precoverage": "npm run build",
     "coverage": "jest --coverage",
     "postcoverage": "node ./remap_coverage_ts.js"

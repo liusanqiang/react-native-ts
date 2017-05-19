@@ -8,20 +8,12 @@ import {
 	AppRegistry,
 } from 'react-native';
 
-interface Props {
-
-}
-
-interface State {
-
-}
-
-export default class App extends React.Component<Props, State> {
-	onPress() {
+export default class App extends React.Component<{}, {}> {
+	private onPress() {
 		alert('press');
 	}
 
-	render() {
+	public render() {
 		return (
 			<TouchableOpacity style={styles.container} onPress={this.onPress.bind(this)}>
 				<Text style={styles.welcome}>

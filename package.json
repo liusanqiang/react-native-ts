@@ -6,11 +6,11 @@
     "start": "node node_modules/react-native/local-cli/cli.js start --skipflow",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
-    "prebuild": "rimraf build",
+    "prebuild": "rimraf build && npm run lint",
     "build": "tsc",
     "pretest": "npm run build",
     "test": "jest",
-		"lint":  "tslint --project ./tsconfig.json --config ./tslint.json --type-check ./src/**/*.ts?",
+		"lint":  "tslint --project ./tsconfig.json --config ./tslint.json ./src/**/*.ts?",
     "precoverage": "npm run build",
     "coverage": "jest --coverage",
     "postcoverage": "node ./remap_coverage_ts.js"

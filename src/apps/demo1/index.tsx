@@ -17,11 +17,10 @@ export default class App extends React.Component<{}, {}> {
 
 	public render() {
 		const p1: Point = new Point(3, 5);
-		const p2: Point = new Point(5, 5);
 		return (
 			<TouchableOpacity style={styles.container} onPress={this.onPress.bind(this)}>
 				<Text style={styles.welcome}>
-					Demo1  {p1.show()} {p2.show()}
+					Demo1  {p1.show()}
 				</Text>
 				<Text style={styles.instructions}>
 					To get started, edit index.ios.js

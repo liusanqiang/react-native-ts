@@ -10,23 +10,31 @@
     "build": "tsc",
     "pretest": "npm run build",
     "test": "jest",
-		"lint":  "tslint --project ./tsconfig.json --config ./tslint.json ./src/**/*.ts?",
+    "lint": "tslint --project ./tsconfig.json --config ./tslint.json ./src/**/*.ts?",
     "precoverage": "npm run build",
     "coverage": "jest --coverage",
     "postcoverage": "node ./remap_coverage_ts.js"
   },
   "dependencies": {
     "react": "16.0.0-alpha.6",
-    "react-native": "0.44.0"
+    "react-native": "0.44.0",
+    "react-native-elements": "^0.12.2",
+    "react-native-vector-icons": "^4.1.1"
   },
   "devDependencies": {
+    "@types/enzyme": "^2.8.0",
     "@types/jest": "^19.2.3",
     "@types/react": "^15.0.24",
+    "@types/react-dom": "^15.5.0",
     "@types/react-native": "^0.43.11",
     "@types/react-test-renderer": "^15.5.0",
     "babel-jest": "^20.0.3",
     "babel-preset-react-native": "^1.9.1",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "jest": "20.0.3",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4",
     "react-test-renderer": "16.0.0-alpha.6",
     "remap-istanbul": "^0.9.5",
     "rimraf": "^2.6.1",

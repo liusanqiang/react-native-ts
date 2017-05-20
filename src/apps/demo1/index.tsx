@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-	AppRegistry,
 	StyleSheet,
 	Text,
 	TextStyle,
@@ -16,14 +15,15 @@ export default class App extends React.Component<{}, {}> {
 	}
 
 	public render() {
-		const p1: Point = new Point(3, 5);
+		const p1: Point = new Point(3, 6);
+		const p2: Point = new Point(5, 9);
 		return (
-			<TouchableOpacity style={styles.container} onPress={this.onPress.bind(this)}>
+			<TouchableOpacity ref='main' style={styles.container} onPress={this.onPress.bind(this)}>
 				<Text style={styles.welcome}>
 					Demo1  {p1.show()}
 				</Text>
 				<Text style={styles.instructions}>
-					To get started, edit index.ios.js
+					To get started, edit index.ios.js {p2.show()}
 				</Text>
 				<Text style={styles.instructions}>
 					Press Cmd+R to reload, {'\n'}
@@ -54,5 +54,3 @@ const styles = StyleSheet.create({
 		marginBottom: 5,
 	} as TextStyle,
 });
-
-AppRegistry.registerComponent('ReactNativeTS', () => App);

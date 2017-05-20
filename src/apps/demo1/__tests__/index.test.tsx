@@ -1,13 +1,23 @@
-import 'react-native';
 import React from 'react';
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 import App from '../index';
 
-it('renders correctly', () => {
-	const tree = renderer.create(
-		<App />,
-	);
-	expect(tree).toBeDefined();
+describe('App Component', () => {
+	it('should render without issues', () => {
+		const component = shallow(<App />);
+
+		expect(component.length).toBe(1);
+		expect(toJson(component)).toMatchSnapshot();
+	});
+
+	it('should have onPress event', () => {
+		const component = shallow(<App />);
+		const innerComponent = component.find('TouchableOpacity');
+
+		innerComponent.simulate('press');
+
+		console.log(component);
+	});
 });
